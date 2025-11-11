@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Padel Club Charleroi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-default">  
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="image/Logo fond bleu.png" alt="Logo Padel Club Charleroi">
+                <h1>Padel Club Charleroi</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours & Stages</a></li>
+                <li><a href="tournois-interclubs.html">Tournois & Interclubs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservation.html" class="active">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <section class="reservation-section">
+            <h2>Réservez Votre Terrain</h2>
+            <p>Remplissez le formulaire ci-dessous pour réserver votre créneau de jeu.</p>
+
+            <form class="reservation-form" action="#" method="post">
+                
+                <!-- INFORMATIONS PERSONNELLES -->
+                <fieldset>
+                    <legend>Vos informations</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required placeholder="0471 12 34 56">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codePostal">Code Postal</label>
+                        <input type="number" id="codePostal" name="codePostal" placeholder="6000">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pourquoi réservez-vous ?</legend>
+
+                    <div class= "radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="initiation" name="réservation" value="initiation" required>
+                            <label for="initiation">Initiation</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="cours" name="réservation" value="cours">
+                            <label for="cours">Cours</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="jeu libre" name="réservation" value="jeu libre">
+                            <label for="jeu libre">Jeu libre</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- CHOIX DU TYPE DE TERRAIN -->
+                <fieldset>
+                    <legend>Type de terrain</legend>
+                    
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="interieur" name="typeTerrain" value="interieur" required>
+                            <label for="interieur">Terrain Intérieur</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="exterieur" name="typeTerrain" value="exterieur">
+                            <label for="exterieur">Terrain Extérieur</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- CHOIX DU TERRAIN -->
+                <fieldset>
+                    <legend>Choisissez votre terrain</legend>
+                    
+                    <div class="terrains-grid">
+                        <div class="terrain-choice">
+                            <input type="radio" id="terrain1" name="terrain" value="1" required>
+                            <label for="terrain1">Terrain 1</label>
+                        </div>
+                        <div class="terrain-choice">
+                            <input type="radio" id="terrain2" name="terrain" value="2">
+                            <label for="terrain2">Terrain 2</label>
+                        </div>
+                        <div class="terrain-choice">
+                            <input type="radio" id="terrain3" name="terrain" value="3">
+                            <label for="terrain3">Terrain 3</label>
+                        </div>
+                        <div class="terrain-choice">
+                            <input type="radio" id="terrain4" name="terrain" value="4">
+                            <label for="terrain4">Terrain 4</label>
+                        </div>
+                        <div class="terrain-choice">
+                            <input type="radio" id="terrain5" name="terrain" value="5">
+                            <label for="terrain5">Terrain 5</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- CRÉNEAU HORAIRE -->
+                <fieldset>
+                    <legend>Sélectionnez votre créneau</legend>
+                    
+                    <div class="form-group">
+                        <label for="date">Date de réservation *</label> <!--Comment faire en sorte sans script d'avoir une date cohérente (de aujourd'hui => 10 max)-->
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="heure">Heure de début *</label>
+                        <select id="heure" name="heure" required>
+                            <option value="">-- Sélectionnez une heure --</option>
+                            <option value="09:00">09:00</option>
+                            <option value="09:30">09:30</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:30">21:30</option>
+                            <option value="22:00">22:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duree">Durée de réservation *</label>
+                        <select id="duree" name="duree" required>
+                            <option value="">-- Sélectionnez la durée --</option>
+                            <option value="1">1 heure</option>
+                            <option value="1.5">1 heure 30</option>
+                            <option value="2">2 heures</option>
+                            <option value="2.5">2 heures 30</option>
+                            <option value="3">3 heures</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- BOUTON DE SOUMISSION -->
+                <div class="form-submit">
+                    <button type="submit">Réserver mon terrain</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Rue de la Raquette 61, 6000 Charleroi | 071 00 00 00 | PadelClubCharleroi@Padel.be</p>
+    </footer>
+
+</body>
+</html>

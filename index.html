@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Club Charleroi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-index">  
+
+    <!-- MAIN : contenu principal de la page -->
+    <main>
+    <!-- Navigation par points -->
+    <nav class="scroll-nav">
+        <a href="#section1" class="nav-dot"></a>
+        <a href="#section2" class="nav-dot"></a>
+        <a href="#section3" class="nav-dot"></a>
+        <a href="#section4" class="nav-dot"></a>
+        <a href="#section5" class="nav-dot"></a>
+    </nav>
+
+    <!-- Conteneur scroll -->
+    <div class="scroll-container">
+        
+        <!-- Section 1 -->
+        <section id="section1" class="scroll-section section-1">
+            <div class="hero-container">
+                <!-- Texte à gauche -->
+                <div class="hero-texte">
+                <h1>Bienvenue au Padel Club Charleroi</h1>
+                <p>
+                    Venez découvrir notre club idéalement situé au cœur de Charleroi ! Facilement accessible en
+                    voiture avec <strong>un parking gratuit</strong> à disposition, nous nous trouvons également à seulement 
+                    <strong>10 minutes à pied de la gare</strong>. Un emplacement parfait pour tous !
+                </p>
+                <p>
+                    <button onclick="window.location.href='reservation.html'">Réserver un terrain</button> 
+                    <button onclick="window.location.href='tournois-interclubs.html'">Tournois</button>
+                    <button onclick="window.location.href='cours.html'">Cours</button>
+                </p>
+                </div>
+                
+                <!-- Image à droite -->
+                <div class="hero-image">
+                    <img src="image/Logo fond bleu-modified.png" alt="Charleroi Padel Club">
+                    <p>Rue de la Raquette 61, 6000 Charleroi</p>
+                </div>
+            </div>
+            <div class="scroll-indicator" onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">↓</div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="section2" class="scroll-section section-2">
+            <h2>Nos Terrains</h2>
+            <p>Profitez de nos installations modernes toute l'année, quelles que soient les conditions météo : trois <strong>terrains intérieurs</strong> situés dans notre salle chauffée en hiver vous garantissent un confort optimal, tandis que nos deux <strong>terrains extérieurs</strong> couverts vous permettent de jouer en plein air tout en restant à l'abri..</p>
+            <p>Venez également profiter de nos matchs dans une ambiance conviviale depuis notre <a href="#section4" class="Buv">buvette</a>.</p>
+            <div class="imgTerrains">
+                <img src="image/Padel Infrastruscture.jpg" alt="Vue d'ensemble">
+                <img src="image/Terrain extérieur.jfif" alt="Terrain 1">
+                <img src="image/Terrain intérieur.webp" alt="Terrain 2">
+                <img src="image/Terrain extérieur2.webp" alt="Terrain 3">
+                <img src="image/Terrain intérieur2.webp" alt="Terrain 4">
+                <img src="image/Buvette.jpeg" alt="Vue de la buvette">
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="section3" class="scroll-section section-3">
+            <h3>Débutant ? Joueur Occasionnel ou Confirmé ?</h3>
+            <h2>Rejoignez notre club et profitez de nos cours !</h2>
+            <p>Juste une envie d'apprendre les bases ? De s'entrainer ponctuellement ou de façon hebdomadaire ?</p>
+            <p>Tout est possible !</p>
+            <button onclick="window.location.href='cours.html'">Cours</button>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="section4" class="scroll-section section-4">
+            <h2>Notre Buvette</h2>
+            <p>Après l'effort, le réconfort !</p>
+            <p>Profitez de notre buvette après vos matchs ou en tant que spectateur.</p>
+            <a href="#menuLink" class="btn-ouvrir">Ouvrir le menu</a>
+                    <div id="menuLink" class="popup-overlay">
+            <div class="popup-content">
+                <a href="#" class="close-popup">&times;</a>
+                <h3>Notre Menu</h3>
+                <h4>Softs</h4>
+                <ul>
+                    <li><span>Coca-Cola, Fanta, Sprite 33cl</span><span class="price"> 2,50€</span></li>
+                    <li><span>Eau plate/pétillante 50cl</span><span class="price">2€</span></li>
+                    <li><span>Aquarius 50cl</span><span class="price">3.50€</span></li>
+                </ul>
+                <h4>Bières</h4>
+                <ul>
+                    <li><span>Stella Artoise, Jupiler au fût 33cl</span><span class="price">3€</span></li>
+                    <li><span>Liefmans, Pecheresse 25cl</span><span class="price">3€</span></li>
+                    <li><span>Chimay Blanche, Bleu, Verte 33cl</span><span class="price">4€</span></li>
+                    <li><span>Paix Dieu, Triple Karmeliet au fût</span><span class="price"> 4,50€</span></li>
+                </ul>
+                <h4>Restauration</h4>
+                <ul>
+                    <li><span>Sandwich club</span><span class="price">6,00€</span></li>
+                    <li><span>Sandwich Thon Mayo </span><span class="price"> 6,50€</span></li>
+                    <li><span>Salade César</span><span class="price"> 8€</span></li>
+                    <li><span>Planche apéro</span><span class="price"> 10€</span></li>
+                </ul>
+            </div>
+        </div>
+        </section>
+
+        
+        <!-- Section 5 -->
+        <section id="section5" class="scroll-section section-5">
+            <h2>Prêt à vivre l'expérience Padel ? Réservez votre créneau en quelques clics !</h2>
+            <p>Vous n'avez pas encore votre propre équipement ? Aucun problème ! Nous mettons à votre disposition un service de location de raquettes et de balles de qualité professionnelle directement sur place. 
+                Que vous soyez débutant curieux ou joueur confirmé, tout est pensé 
+                pour votre confort et votre plaisir de jeu.</p>
+            <button onclick="window.location.href='reservation.html'">Réserver</button> 
+
+            <h2>Des questions sur nos installations, nos cours ou nos tournois ? </h2>
+            <p>Besoin d'aide pour votre réservation ou simplement envie d'en savoir plus ? Notre équipe passionnée est à votre écoute et se fera un plaisir de vous accompagner dans votre découverte du padel. N'hésitez pas à nous contacter, nous vous répondons rapidement !</p>
+            <button onclick="window.location.href='contact.html'">Contact</button>
+        </section>
+
+    </div>
+    </main>
+</body>
+
+</html>

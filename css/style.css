@@ -1,0 +1,1115 @@
+/* ===================================================================================================================================
+    CONFIG            HEADER            MAIN            FOOTER            CONFIG            HEADER            MAIN            FOOTER
+=================================================================================================================================== */
+
+/*Config*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/*Header*/
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+/* LOGO + NOM */
+.logo a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+    transform: scale(1.02);
+}
+
+.logo img {
+    height: 50px; 
+    width: auto;
+    display: block;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 1.5rem; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.logo h1:hover {
+    color: #faae20e3;
+    transition: color 0.3s ease;
+}
+
+
+nav {
+    flex-shrink: 0; 
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; 
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap; 
+}
+
+/* Effet hover */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #faae20e3;
+}
+
+/* Soulignement animé */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #faae20e3;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* Page active */
+nav a.active {
+    background-color: #faae20e3;
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+/*Footer*/
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+footer p:hover {
+    color: #faae20e3;
+    transition: color 0.3s ease;
+}
+
+/* Main de toutes les pages sauf index*/
+.page-default main {
+    min-height: calc(100vh - 200px);
+    padding: 2rem;
+    max-width: 1400px; /* ← Limite la largeur sur grands écrans */
+    margin: 0 auto; /* ← Centre le contenu */
+}
+
+/* ========================================
+   RESPONSIVE (< 768px)
+======================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    /* Logo centré sur mobile */
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo a {
+        justify-content: center;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE (769px - 1024px)
+======================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 1rem 1.5rem; 
+    }
+
+    .logo img {
+        height: 45px; 
+    }
+
+    .logo h1 {
+        font-size: 1.2rem; 
+        letter-spacing: 0.5px;
+    }
+
+    .logo a {
+        gap: 0.7rem; 
+    }
+
+    nav ul {
+        gap: 0.6rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.4rem;
+    }
+}
+
+
+
+
+/* =====================================================================================================================================
+        Index            Index            Index            Index            Index            Index            Index            Index 
+======================================================================================================================================== */
+
+/*Pas de bordure et prise de toute la page*/
+.page-index {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.page-index body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =============== Gestion des différentes sections ==============*/
+
+.scroll-container {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    /* Cache la scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+
+    min-height: 100vh;
+}
+
+/*couleurs des sections*/
+.section-1 {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+}
+
+.section-2 {
+    background: linear-gradient(135deg, #f89d1c 0%, #faae20 100%);
+    color: white;
+}
+
+.section-3 {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+}
+
+.section-4 {
+    background: linear-gradient(135deg, #f89d1c 0%, #faae20 100%);;
+    color: white;
+}
+
+.section-5 {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+}
+
+.scroll-section h1,
+.scroll-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.scroll-section p {
+    font-size: 1.2rem;
+    max-width: 90%;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.scroll-section.section-5 h2 {
+  margin-bottom: 0.2rem; /* espace entre le titre et le texte suivant */
+}
+
+.scroll-section.section-5 p {
+  margin-bottom: 0.2rem; /* espace entre le paragraphe et le bouton */
+}
+
+.scroll-section.section-5 button {
+  margin-bottom: 0.2rem; /* espace sous le bouton */
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*NAVIGATION PAR POINTS*/
+.scroll-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-dot:hover,
+.nav-dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+/* FLÈCHE SCROLL DOWN*/
+.scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+/*La flêche fait des rebonds*/
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* =============== Gestion de la section 1 =============== */
+
+.hero {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 0px 0px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-texte {
+  flex: 1;
+  color: white;
+}
+
+.hero-texte h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-texte p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.hero-image {
+  flex: 0 0 400px; 
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+.imgTerrains {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.imgTerrains img {
+    width: 100%;
+    height: 12vw;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Tablettes (écrans moyens) */
+@media (max-width: 1024px) {
+    .imgTerrains {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .hero-image{
+        display: none;
+    }
+}
+
+/* Mobiles (petits écrans) */
+@media (max-width: 768px) {
+    .imgTerrains {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 95%;
+        padding: 15px;
+    }
+    
+    .imgTerrains img {
+        height: 25vw;
+    }
+
+    .scroll-container p{
+        font-size: 12px;
+    }
+
+    .scroll-container h2{
+        font-size:30px;
+    }
+
+    .imgTerrains img:nth-child(3),
+    .imgTerrains img:nth-child(4),
+    .imgTerrains img:nth-child(5),
+    .imgTerrains img:nth-child(6) {
+        display: none;
+    }
+
+    .scroll-section.section-5 p{
+        font-size : 12px;
+    }
+
+    .scroll-section.section-5 h2{
+        font-size : 20px;
+    }
+
+    .scroll-section.section-5 button{
+        height : 10vw;
+        font-size : 14px;
+    }
+
+}
+
+.Buv{
+    text-decoration: none; 
+    color: rgb(255, 255, 255); 
+}
+
+.Buv:hover {
+    color: rgb(38, 27, 204);
+}
+
+
+.scroll-section.section-3 h3 {  /* Les deux classes sur le même élément */
+    font-size: 30px;
+}
+
+/* ====================== Gestion du PopUp "Menu" ========================*/
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Afficher le popup quand on clique sur le lien */
+.popup-overlay:target {
+    display: flex;
+}
+
+/* Contenu du popup */
+.popup-content {
+    background-color: rgb(255, 225, 180);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    color : rgb(0, 0, 0)
+}
+
+/* Croix de fermeture à droite */
+.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: red;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.close-popup:hover {
+    color: darkred;
+}
+
+/* Titre du menu */
+.popup-content h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Supprimer les puces des listes */
+.popup-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+/* Style des items de menu */
+.popup-content li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Titres de catégories */
+.popup-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Gestion des boutons */
+
+/*Bouton Autres Pages*/
+.scroll-section button {
+    width: 200px; /*Pas utiliser padding comme ça dépend pas de la*/
+    height: 50px;
+    font-size: 1.1rem;
+    background: #faae20;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.scroll-section button:hover {
+    background: #f89d1c;
+    transform: translateY(-2px);
+}
+
+/*Bouton Menu*/
+.btn-ouvrir {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-ouvrir:hover {
+  background: #0056b3;
+}
+
+
+/* Section 5 - Réservation et Contact */
+.section-5 {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section-5 h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 60px;
+}
+
+.section-5 h2:first-of-type {
+    margin-top: 0;
+}
+
+.section-5 p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.section-5 button {
+    background: #FFA500;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px 0 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.section-5 button:hover {
+    background: #FF8C00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* =====================================================================================================================
+        Contact         Contact         Contact         Contact         Contact         Contact          Contact        
+======================================================================================================================*/
+.contact-info h2 {
+    color: #1e3c72;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.horaires table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horaires th {
+    background-color: #1e3c72;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.horaires td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.horaires tr:last-child td {
+    border-bottom: none;
+}
+
+/* Ligne horizontale pour les 3 contacts */
+.contact-items-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    color: #faae20e3;
+    flex-shrink: 0;
+}
+
+.contact-text p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive : retour à la verticale sur mobile */
+@media (max-width: 768px) {
+    .contact-items-row {
+        flex-direction: column;
+    }
+}
+
+
+
+/* ========================================================================================================================
+    TOURNOIS & INTERCLUBS          TOURNOIS & INTERCLUBS        TOURNOIS & INTERCLUBS          TOURNOIS & INTERCLUBS
+======================================================================================================================== */
+
+.events-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.events-section h2 {
+    color: #1e3c72;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Catégories d'événements */
+.events-category {
+    margin-bottom: 4rem;
+}
+
+.events-category h3 {
+    color: #1e3c72;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #faae20e3;
+}
+
+.category-description {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Items événements */
+.event-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Cache la checkbox */
+.event-toggle {
+    display: none;
+}
+
+/* En-tête de l'événement (partie cliquable) */
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.event-header:hover {
+    background-color: #e9ecef;
+    border-color: #1e3c72;
+}
+
+/* Informations principales */
+.event-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex: 1;
+}
+
+.event-type {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tournoi-badge {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    color: white;
+}
+
+.interclub-badge {
+    background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%);
+    color: white;
+}
+
+.event-teams {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.event-date {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.event-location {
+    color: #555;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Bouton */
+.event-btn {
+    padding: 0.6rem 1.5rem;
+    background-color: #1e3c72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.event-btn:hover {
+    background-color: #2a5298;
+    transform: translateY(-2px);
+}
+
+/* Contenu détaillé (caché par défaut) */
+.event-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: white;
+    padding: 0 1.5rem;
+}
+
+/* Afficher le contenu quand la checkbox est cochée */
+.event-toggle:checked + .event-header + .event-content {
+    max-height: 1000px;
+    padding: 1.5rem;
+    border-top: 2px solid #e0e0e0;
+}
+
+/* Changer l'apparence du header quand ouvert */
+.event-toggle:checked + .event-header {
+    background-color: #1e3c72;
+    color: white;
+}
+
+.event-toggle:checked + .event-header .event-type,
+.event-toggle:checked + .event-header .event-teams,
+.event-toggle:checked + .event-header .event-date,
+.event-toggle:checked + .event-header .event-location {
+    color: white;
+}
+
+.event-toggle:checked + .event-header .event-btn {
+    background-color: white;
+    color: #1e3c72;
+}
+
+/* Contenu des détails */
+.event-content h4 {
+    color: #1e3c72;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.event-content p {
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.event-content strong {
+    color: #1e3c72;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .event-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .event-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .event-location {
+        width: 100%;
+    }
+
+    .event-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .event-content {
+        padding: 0 1rem;
+    }
+
+    .event-toggle:checked + .event-header + .event-content {
+        padding: 1rem;
+    }
+
+    .events-category h3 {
+        font-size: 1.4rem;
+    }
+
+    .category-description {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* =================================================================================================================
+        Reservation         Reservation             Reservation             Reservation             Reservation 
+===================================================================================================================*/
+
+/* Section de réservation */
+.reservation-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Titre et texte au-dessus du formulaire */
+.reservation-section h2 {
+    color: #1e3c72;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.reservation-section > p {
+    color: #1e3c72;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Formulaire - fond blanc pour le contraste */
+.reservation-form {
+    max-width: 700px;        
+    margin: 0 auto;        
+    padding: 2rem;           
+    background-color: white; /* Changé de #f9f9f9 à blanc */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Ajout d'une ombre */
+
+    /* Bordure dégradée */
+    border: 3px solid transparent;
+    background-image: 
+        linear-gradient(white, white),
+        linear-gradient(135deg, #faae20 0%, #f89d1c 50%, #faae20 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Légendes des fieldsets */
+fieldset legend {
+    color: #1e3c72;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #faae20 0%, #f89d1c 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(250, 174, 32, 0.4);
+}
+
+/* Reste de votre CSS existant... */
+label {       
+    margin-bottom: 0.5rem;
+    font-weight: bold;      
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;        
+    padding: 0.75rem;          
+    border: 2px solid #ddd; 
+    border-radius: 4px;         
+    font-size: 1rem;            
+    font-family: inherit;       
+    transition: border-color 0.3s; 
+    box-sizing: border-box;   
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #faae20e3;     
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1); 
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: #1e3c72;
+}
+
+input:valid {
+    border-color: #28a745;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
