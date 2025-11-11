@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padel Club Charleroi</title>
+    <title>Cours & Stages - Padel Club Charleroi</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-default">  
@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="cours.html"class="active">Cours & Stages</a></li>
+                <li><a href="cours.html" class="active">Cours & Stages</a></li>
                 <li><a href="tournois-interclubs.html">Tournois & Interclubs</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="reservation.html">Réserver</a></li>
@@ -28,19 +28,203 @@
 
     <!-- MAIN : contenu principal de la page -->
     <main>
-        <section>
-            <h2>Initiation gratuite au padel</h2>
-            <p>Découvrez le padel gratuitement ! Tous les habitants du Grand Charleroi sont invités à participer à nos séances d'initiation. Encadrés par nos coachs certifiés, vous apprendrez les bases de ce sport passionnant dans une ambiance conviviale. Matériel fourni, venez simplement avec votre bonne humeur !</p>
+        <!-- Intro -->
+        <section class="cours-intro">
+            <h1>Cours & Stages de Padel</h1>
+            <p class="intro-text">Progressez rapidement avec nos coachs diplômés et passionnés ! Du débutant complet au joueur confirmé, nous avons la formule adaptée à vos besoins et votre niveau.</p>
         </section>
 
-        <section>
-            <h2>Cours adaptés à votre niveau</h2>
-            <p>Que vous soyez débutant complet ou joueur expérimenté, nos coachs diplômés Clément, Thomas et Julie vous accompagnent dans votre progression. Choisissez entre cours individuels pour un coaching personnalisé ou cours collectifs pour progresser en groupe dans une ambiance dynamique. Programmes sur mesure et résultats garantis !</p>
+        <!-- Nos Coachs -->
+        <section class="cours-coachs">
+            <h2>🎓 Nos Coachs Certifiés</h2>
+            <div class="coachs-grid">
+                <div class="coach-card">
+                    <h3>Clément</h3>
+                    <p class="coach-specialite">Spécialiste Technique</p>
+                    <p>Expert en perfectionnement des coups et stratégies avancées</p>
+                </div>
+                <div class="coach-card">
+                    <h3>Thomas</h3>
+                    <p class="coach-specialite">Coach Débutants</p>
+                    <p>Pédagogue passionné, il vous fera découvrir le padel en douceur</p>
+                </div>
+                <div class="coach-card">
+                    <h3>Julie</h3>
+                    <p class="coach-specialite">Préparation Physique</p>
+                    <p>Alliance parfaite entre technique, tactique et condition physique</p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Stages vacances : de 6 à 21 ans</h2>
-            <p>À chaque vacances scolaires, vivez l'aventure padel ! Nos stages accueillent enfants, ados et jeunes adultes dans des groupes adaptés par âge et niveau. Au programme : technique, tactique, matchs et surtout beaucoup de plaisir ! Encadrement professionnel, goûters inclus et souvenirs inoubliables garantis.</p>
+        <!-- Initiation Gratuite -->
+        <section class="cours-section gratuit-section">
+            <div class="cours-badge gratuit-badge">GRATUIT</div>
+            <h2>🎾 Initiation Gratuite au Padel</h2>
+            <p class="cours-description">
+                Vous n'avez jamais joué au padel ? C'est l'occasion parfaite ! Tous les habitants du Grand Charleroi 
+                peuvent participer à nos séances d'initiation gratuites. Encadrés par nos coachs certifiés, 
+                vous apprendrez les bases de ce sport passionnant dans une ambiance conviviale.
+            </p>
+            
+            <div class="cours-details">
+                <div class="detail-item">
+                    <strong>👥 Pour qui ?</strong>
+                    <p>Tous les habitants du Grand Charleroi, dès 12 ans</p>
+                </div>
+                <div class="detail-item">
+                    <strong>⏰ Durée</strong>
+                    <p>Séance de 1h30</p>
+                </div>
+                <div class="detail-item">
+                    <strong>📅 Quand ?</strong>
+                    <p>Tous les samedis à 10h00 (sur inscription)</p>
+                </div>
+                <div class="detail-item">
+                    <strong>🎒 Matériel</strong>
+                    <p>Fourni gratuitement (raquettes et balles)</p>
+                </div>
+            </div>
+            
+            <button onclick="window.location.href='reservation.html'" class="btn-inscription">S'inscrire à une initiation</button>
+        </section>
+
+        <!-- Planning Hebdomadaire -->
+        <section class="cours-planning">
+            <h2>📅 Planning des Cours Collectifs</h2>
+            <p class="planning-subtitle">Choisissez le créneau qui vous convient le mieux</p>
+            
+            <div class="planning-table-container">
+                <table class="planning-table">
+                    <thead>
+                        <tr>
+                            <th>Jour</th>
+                            <th>Horaire</th>
+                            <th>Niveau</th>
+                            <th>Coach</th>
+                            <th>Places</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lundi</strong></td>
+                            <td>18:30 - 20:00</td>
+                            <td><span class="niveau-badge debutant">Débutant</span></td>
+                            <td>Thomas</td>
+                            <td class="places-dispo">3 places</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mardi</strong></td>
+                            <td>19:00 - 20:30</td>
+                            <td><span class="niveau-badge intermediaire">Intermédiaire</span></td>
+                            <td>Clément</td>
+                            <td class="places-dispo">2 places</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mercredi</strong></td>
+                            <td>14:00 - 15:30</td>
+                            <td><span class="niveau-badge debutant">Débutant</span></td>
+                            <td>Julie</td>
+                            <td class="places-dispo">5 places</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mercredi</strong></td>
+                            <td>20:00 - 21:30</td>
+                            <td><span class="niveau-badge avance">Avancé</span></td>
+                            <td>Clément</td>
+                            <td class="places-limitees">1 place</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jeudi</strong></td>
+                            <td>18:00 - 19:30</td>
+                            <td><span class="niveau-badge intermediaire">Intermédiaire</span></td>
+                            <td>Julie</td>
+                            <td class="places-dispo">4 places</td>
+                        </tr>
+                        <tr class="complet-row">
+                            <td><strong>Vendredi</strong></td>
+                            <td>19:00 - 20:30</td>
+                            <td><span class="niveau-badge debutant">Débutant</span></td>
+                            <td>Thomas</td>
+                            <td class="complet">Complet</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Samedi</strong></td>
+                            <td>09:00 - 10:30</td>
+                            <td><span class="niveau-badge tous">Tous niveaux</span></td>
+                            <td>Clément</td>
+                            <td class="places-dispo">6 places</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Samedi</strong></td>
+                            <td>14:00 - 15:30</td>
+                            <td><span class="niveau-badge avance">Avancé</span></td>
+                            <td>Julie</td>
+                            <td class="places-limitees">1 place</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="planning-note">💡 <em>Les places sont limitées. Inscrivez-vous rapidement pour garantir votre place !</em></p>
+        </section>
+
+        <!-- Stages Vacances -->
+        <section class="cours-section stages-section">
+            <h2>🏖️ Stages Vacances : 6 à 21 ans</h2>
+            <p class="cours-description">
+                À chaque période de vacances scolaires, vivez l'aventure padel ! Nos stages accueillent 
+                enfants, ados et jeunes adultes dans des groupes adaptés par âge et niveau. 
+                Au programme : technique, tactique, matchs et surtout beaucoup de plaisir !
+            </p>
+
+            <div class="stages-grid">
+                <div class="stage-card">
+                    <h3>🧒 Stage Enfants (6-11 ans)</h3>
+                    <p><strong>Durée :</strong> 5 demi-journées (9h-12h)</p>
+                    <p><strong>Programme :</strong> Découverte ludique, jeux et initiation</p>
+                    <p><strong>Tarif :</strong> <span class="prix-highlight">120€</span></p>
+                    <p class="stage-inclus">✓ Goûter inclus chaque jour</p>
+                </div>
+
+                <div class="stage-card">
+                    <h3>👦 Stage Ados (12-17 ans)</h3>
+                    <p><strong>Durée :</strong> 5 demi-journées (14h-17h)</p>
+                    <p><strong>Programme :</strong> Perfectionnement technique et matchs</p>
+                    <p><strong>Tarif :</strong> <span class="prix-highlight">140€</span></p>
+                    <p class="stage-inclus">✓ Boisson offerte + tournoi final</p>
+                </div>
+
+                <div class="stage-card">
+                    <h3>🎓 Stage Jeunes Adultes (18-21 ans)</h3>
+                    <p><strong>Durée :</strong> 5 sessions intensives (18h-21h)</p>
+                    <p><strong>Programme :</strong> Perfectionnement avancé et tactique</p>
+                    <p><strong>Tarif :</strong> <span class="prix-highlight">160€</span></p>
+                    <p class="stage-inclus">✓ Accès buvette + coaching personnalisé</p>
+                </div>
+            </div>
+
+            <div class="stages-dates">
+                <h3>📅 Prochaines Dates de Stages</h3>
+                <ul class="dates-list">
+                    <li><strong>Vacances de Carnaval :</strong> 24-28 février 2025</li>
+                    <li><strong>Vacances de Pâques :</strong> 7-11 avril 2025</li>
+                    <li><strong>Vacances d'Été (Session 1) :</strong> 7-11 juillet 2025</li>
+                    <li><strong>Vacances d'Été (Session 2) :</strong> 18-22 août 2025</li>
+                    <li><strong>Vacances de Toussaint :</strong> 27-31 octobre 2025</li>
+                </ul>
+            </div>
+
+            <button onclick="window.location.href='contact.html'" class="btn-inscription">Inscrire mon enfant à un stage</button>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cours-cta">
+            <h2>Prêt à Commencer ?</h2>
+            <p>Contactez-nous pour plus d'informations ou pour réserver votre cours d'essai !</p>
+            <div class="cta-buttons">
+                <button onclick="window.location.href='contact.html'" class="btn-primary">Nous Contacter</button>
+                <button onclick="window.location.href='reservation.html'" class="btn-secondary">Réserver un Terrain</button>
+            </div>
         </section>
     </main>
 

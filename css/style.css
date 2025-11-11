@@ -1,10 +1,21 @@
 /* ===================================================================================================================================
-    CONFIG            HEADER            MAIN            FOOTER            CONFIG            HEADER            MAIN            FOOTER
+    TABLE DES MATIÈRES
+    1. CONFIGURATION GÉNÉRALE
+    2. HEADER (Logo + Navigation)
+    3. FOOTER
+    4. MAIN (Pages par défaut)
+    5. INDEX (Page d'accueil avec scroll)
+    6. CONTACT
+    7. TOURNOIS & INTERCLUBS
+    8. RÉSERVATION
+    9. MEDIA QUERIES RESPONSIVE
 =================================================================================================================================== */
 
-/*Config*/
+/* ===================================================================================================================================
+   1. CONFIGURATION GÉNÉRALE
+=================================================================================================================================== */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +27,10 @@ body {
     color: #333;
 }
 
-/*Header*/
+/* ===================================================================================================================================
+   2. HEADER (Logo + Navigation)
+=================================================================================================================================== */
+
 header {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     padding: 1rem 2rem;
@@ -27,10 +41,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
-/* LOGO + NOM */
+/* Logo + Nom */
 .logo a {
     display: flex;
     flex-direction: row;
@@ -45,14 +59,14 @@ header {
 }
 
 .logo img {
-    height: 50px; 
+    height: 50px;
     width: auto;
     display: block;
 }
 
 .logo h1 {
     color: #fff;
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0;
@@ -64,15 +78,15 @@ header {
     transition: color 0.3s ease;
 }
 
-
+/* Navigation */
 nav {
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
 }
@@ -86,10 +100,9 @@ nav a {
     border-radius: 5px;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
-/* Effet hover */
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: #faae20e3;
@@ -119,7 +132,10 @@ nav a.active {
     font-weight: bold;
 }
 
-/*Footer*/
+/* ===================================================================================================================================
+   3. FOOTER
+=================================================================================================================================== */
+
 footer {
     background-color: #2c3e50;
     color: #ecf0f1;
@@ -138,110 +154,22 @@ footer p:hover {
     transition: color 0.3s ease;
 }
 
-/* Main de toutes les pages sauf index*/
+/* ===================================================================================================================================
+   4. MAIN (Pages par défaut)
+=================================================================================================================================== */
+
 .page-default main {
     min-height: calc(100vh - 200px);
     padding: 2rem;
-    max-width: 1400px; /* ← Limite la largeur sur grands écrans */
-    margin: 0 auto; /* ← Centre le contenu */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* ========================================
-   RESPONSIVE (< 768px)
-======================================== */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1.5rem;
-    }
+/* ===================================================================================================================================
+   5. INDEX (Page d'accueil avec scroll)
+=================================================================================================================================== */
 
-    /* Logo centré sur mobile */
-    .logo {
-        width: 100%;
-        text-align: center;
-    }
-
-    .logo a {
-        justify-content: center;
-    }
-
-    .logo img {
-        height: 45px;
-    }
-
-    .logo h1 {
-        font-size: 1.2rem;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.8rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    nav a {
-        display: block;
-        width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-
-    main {
-        padding: 1.5rem 1rem;
-    }
-
-    footer {
-        padding: 1.5rem 1rem;
-        font-size: 0.85rem;
-    }
-}
-
-
-/* ========================================
-   RESPONSIVE (769px - 1024px)
-======================================== */
-@media (min-width: 769px) and (max-width: 1024px) {
-    header {
-        padding: 1rem 1.5rem; 
-    }
-
-    .logo img {
-        height: 45px; 
-    }
-
-    .logo h1 {
-        font-size: 1.2rem; 
-        letter-spacing: 0.5px;
-    }
-
-    .logo a {
-        gap: 0.7rem; 
-    }
-
-    nav ul {
-        gap: 0.6rem;
-    }
-
-    nav a {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.4rem;
-    }
-}
-
-
-
-
-/* =====================================================================================================================================
-        Index            Index            Index            Index            Index            Index            Index            Index 
-======================================================================================================================================== */
-
-/*Pas de bordure et prise de toute la page*/
+/* Configuration page index */
 .page-index {
     margin: 0 !important;
     padding: 0 !important;
@@ -257,8 +185,7 @@ footer p:hover {
     padding: 0 !important;
 }
 
-/* =============== Gestion des différentes sections ==============*/
-
+/* Conteneur scroll */
 .scroll-container {
     height: 100vh;
     width: 100vw;
@@ -268,8 +195,6 @@ footer p:hover {
     margin: 0;
     padding: 0;
     border: none;
-    
-    /* Cache la scrollbar */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -278,27 +203,25 @@ footer p:hover {
     display: none;
 }
 
+/* Sections scroll */
 .scroll-section {
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    
     margin: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
-
     min-height: 100vh;
 }
 
-/*couleurs des sections*/
+/* Couleurs des sections */
 .section-1 {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
@@ -315,7 +238,7 @@ footer p:hover {
 }
 
 .section-4 {
-    background: linear-gradient(135deg, #f89d1c 0%, #faae20 100%);;
+    background: linear-gradient(135deg, #f89d1c 0%, #faae20 100%);
     color: white;
 }
 
@@ -324,6 +247,7 @@ footer p:hover {
     color: white;
 }
 
+/* Typographie sections */
 .scroll-section h1,
 .scroll-section h2 {
     font-size: 3rem;
@@ -338,19 +262,23 @@ footer p:hover {
     line-height: 1.6;
 }
 
+.scroll-section.section-3 h3 {
+    font-size: 30px;
+}
+
 .scroll-section.section-5 h2 {
-  margin-bottom: 0.2rem; /* espace entre le titre et le texte suivant */
+    margin-bottom: 0.2rem;
 }
 
 .scroll-section.section-5 p {
-  margin-bottom: 0.2rem; /* espace entre le paragraphe et le bouton */
+    margin-bottom: 0.2rem;
 }
 
 .scroll-section.section-5 button {
-  margin-bottom: 0.2rem; /* espace sous le bouton */
+    margin-bottom: 0.2rem;
 }
 
-/* ANIMATIONS */
+/* Animation fade in */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -362,7 +290,7 @@ footer p:hover {
     }
 }
 
-/*NAVIGATION PAR POINTS*/
+/* Navigation par points */
 .scroll-nav {
     position: fixed;
     right: 2rem;
@@ -391,7 +319,7 @@ footer p:hover {
     transform: scale(1.3);
 }
 
-/* FLÈCHE SCROLL DOWN*/
+/* Flèche scroll down */
 .scroll-indicator {
     position: fixed;
     bottom: 2rem;
@@ -403,7 +331,6 @@ footer p:hover {
     cursor: pointer;
 }
 
-/*La flêche fait des rebonds*/
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateX(-50%) translateY(0);
@@ -416,49 +343,49 @@ footer p:hover {
     }
 }
 
-/* =============== Gestion de la section 1 =============== */
-
+/* Section 1 - Hero */
 .hero {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  padding: 0px 0px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 0px 0px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 60px;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: center;
 }
 
 .hero-texte {
-  flex: 1;
-  color: white;
+    flex: 1;
+    color: white;
 }
 
 .hero-texte h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .hero-texte p {
-  font-size: 1.5rem;
-  line-height: 1.8;
+    font-size: 1.5rem;
+    line-height: 1.8;
 }
 
 .hero-image {
-  flex: 0 0 400px; 
+    flex: 0 0 400px;
 }
 
 .hero-image img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
+/* Section 2 - Images terrains */
 .imgTerrains {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -471,83 +398,596 @@ footer p:hover {
 
 .imgTerrains img {
     width: 100%;
-    height: 12vw;
+    height: 16vw;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* ===================================================================================================================================
+   CSS ADDITIONNEL POUR SECTION 4 BUVETTE ET PAGE COURS
+   À ajouter à la fin de votre style.css existant
+=================================================================================================================================== */
 
-/* Tablettes (écrans moyens) */
+/* ===================================================================================================================================
+   SECTION 4 - BUVETTE (INDEX)
+=================================================================================================================================== */
+
+.buvette-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.buvette-content {
+    text-align: center;
+}
+
+.buvette-intro {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.buvette-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.buvette-description {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    line-height: 1.8;
+}
+
+.buvette-horaires {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.buvette-horaires p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* ===================================================================================================================================
+   PAGE COURS
+=================================================================================================================================== */
+
+/* Intro */
+.cours-intro {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.cours-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Sections générales */
+.cours-section {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.cours-section h2 {
+    color: #1e3c72;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.cours-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+/* Badge gratuit */
+.cours-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.gratuit-badge {
+    background: #28a745;
+    color: white;
+}
+
+.gratuit-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 15px;
+    border: 3px solid #28a745;
+}
+
+/* Nos Coachs */
+.cours-coachs {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.cours-coachs h2 {
+    color: #1e3c72;
+}
+
+.coachs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.coach-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+}
+
+.coach-card h3 {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.coach-specialite {
+    color: #faae20;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tarif-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.tarif-duree {
+    font-weight: 600;
+    color: #333;
+}
+
+.tarif-prix {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e3c72;
+}
+
+.tarif-economie {
+    width: 100%;
+    font-size: 0.85rem;
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Planning */
+.cours-planning {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+}
+
+.planning-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.planning-table-container {
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.planning-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.planning-table thead {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+}
+
+.planning-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.planning-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.planning-table tbody tr:hover {
+    background: #f0f9ff;
+}
+
+.complet-row {
+    opacity: 0.6;
+}
+
+/* Badges niveau */
+.niveau-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.niveau-badge.debutant {
+    background: #d4edda;
+    color: #155724;
+}
+
+.niveau-badge.intermediaire {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.niveau-badge.avance {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.niveau-badge.tous {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Places disponibles */
+.places-dispo {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.places-limitees {
+    color: #ff8c00;
+    font-weight: 600;
+}
+
+.complet {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.planning-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Stages */
+.stages-section {
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+    border-radius: 15px;
+}
+
+.stages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.stage-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.stage-card:hover {
+    transform: translateY(-5px);
+}
+
+.stage-card h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.stage-card p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.prix-highlight {
+    color: #faae20;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.stage-inclus {
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.stages-dates {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.stages-dates h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+}
+
+.dates-list {
+    list-style: none;
+    padding: 0;
+}
+
+.dates-list li {
+    padding: 0.8rem;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+}
+
+.dates-list li:last-child {
+    border-bottom: none;
+}
+
+/* Boutons */
+.btn-inscription {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-inscription:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Call to Action */
+.cours-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border-radius: 15px;
+    margin: 3rem 2rem;
+}
+
+.cours-cta h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cours-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #faae20;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #f89d1c;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #1e3c72;
+}
+
+.btn-secondary:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* ===================================================================================================================================
+   RESPONSIVE - BUVETTE & COURS
+=================================================================================================================================== */
+
 @media (max-width: 1024px) {
-    .imgTerrains {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .hero-image{
-        display: none;
-    }
-}
-
-/* Mobiles (petits écrans) */
-@media (max-width: 768px) {
-    .imgTerrains {
+    .buvette-features {
         grid-template-columns: 1fr;
-        gap: 15px;
-        max-width: 95%;
-        padding: 15px;
-    }
-    
-    .imgTerrains img {
-        height: 25vw;
+        gap: 1rem;
     }
 
-    .scroll-container p{
-        font-size: 12px;
+    .coachs-grid,
+    .cours-types-grid,
+    .stages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .scroll-container h2{
-        font-size:30px;
+    .cours-details {
+        grid-template-columns: 1fr;
     }
-
-    .imgTerrains img:nth-child(3),
-    .imgTerrains img:nth-child(4),
-    .imgTerrains img:nth-child(5),
-    .imgTerrains img:nth-child(6) {
-        display: none;
-    }
-
-    .scroll-section.section-5 p{
-        font-size : 12px;
-    }
-
-    .scroll-section.section-5 h2{
-        font-size : 20px;
-    }
-
-    .scroll-section.section-5 button{
-        height : 10vw;
-        font-size : 14px;
-    }
-
 }
 
-.Buv{
-    text-decoration: none; 
-    color: rgb(255, 255, 255); 
+@media (max-width: 768px) {
+    .cours-intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .buvette-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+
+    .feature-item {
+        padding: 1rem;
+    }
+
+    .buvette-description {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .cours-section {
+        padding: 1rem;
+    }
+
+    .cours-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .cours-description {
+        font-size: 1rem;
+    }
+
+    .coachs-grid,
+    .cours-types-grid,
+    .stages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cours-details {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .planning-table {
+        font-size: 0.85rem;
+    }
+
+    .planning-table th,
+    .planning-table td {
+        padding: 0.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+/* Lien buvette */
+.Buv {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 .Buv:hover {
     color: rgb(38, 27, 204);
 }
 
-
-.scroll-section.section-3 h3 {  /* Les deux classes sur le même élément */
-    font-size: 30px;
-}
-
-/* ====================== Gestion du PopUp "Menu" ========================*/
+/* Section 4 - Popup Menu */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -561,12 +1001,10 @@ footer p:hover {
     align-items: center;
 }
 
-/* Afficher le popup quand on clique sur le lien */
 .popup-overlay:target {
     display: flex;
 }
 
-/* Contenu du popup */
 .popup-content {
     background-color: rgb(255, 225, 180);
     padding: 2rem;
@@ -577,10 +1015,9 @@ footer p:hover {
     overflow-y: auto;
     position: relative;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    color : rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
 }
 
-/* Croix de fermeture à droite */
 .close-popup {
     position: absolute;
     top: 20px;
@@ -597,20 +1034,17 @@ footer p:hover {
     color: darkred;
 }
 
-/* Titre du menu */
 .popup-content h3 {
     margin-top: 0;
     margin-bottom: 1.5rem;
 }
 
-/* Supprimer les puces des listes */
 .popup-content ul {
     list-style: none;
     padding: 0;
     margin: 0 0 1.5rem 0;
 }
 
-/* Style des items de menu */
 .popup-content li {
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -618,18 +1052,15 @@ footer p:hover {
     justify-content: space-between;
 }
 
-/* Titres de catégories */
 .popup-content h4 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     color: #333;
 }
 
-/* Gestion des boutons */
-
-/*Bouton Autres Pages*/
+/* Boutons généraux sections */
 .scroll-section button {
-    width: 200px; /*Pas utiliser padding comme ça dépend pas de la*/
+    width: 200px;
     height: 50px;
     font-size: 1.1rem;
     background: #faae20;
@@ -647,22 +1078,21 @@ footer p:hover {
     transform: translateY(-2px);
 }
 
-/*Bouton Menu*/
+/* Bouton ouvrir menu */
 .btn-ouvrir {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-ouvrir:hover {
-  background: #0056b3;
+    background: #0056b3;
 }
-
 
 /* Section 5 - Réservation et Contact */
 .section-5 {
@@ -707,38 +1137,16 @@ footer p:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* ===================================================================================================================================
+   6. CONTACT
+=================================================================================================================================== */
 
-
-/* =====================================================================================================================
-        Contact         Contact         Contact         Contact         Contact         Contact          Contact        
-======================================================================================================================*/
 .contact-info h2 {
     color: #1e3c72;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.horaires table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.horaires th {
-    background-color: #1e3c72;
-    color: white;
-    padding: 1rem;
-    text-align: left;
-}
-
-.horaires td {
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-}
-
-.horaires tr:last-child td {
-    border-bottom: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Ligne horizontale pour les 3 contacts */
@@ -765,18 +1173,31 @@ footer p:hover {
     line-height: 1.5;
 }
 
-/* Responsive : retour à la verticale sur mobile */
-@media (max-width: 768px) {
-    .contact-items-row {
-        flex-direction: column;
-    }
+/* Horaires */
+.horaires table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
+.horaires th {
+    background-color: #1e3c72;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
 
+.horaires td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
 
-/* ========================================================================================================================
-    TOURNOIS & INTERCLUBS          TOURNOIS & INTERCLUBS        TOURNOIS & INTERCLUBS          TOURNOIS & INTERCLUBS
-======================================================================================================================== */
+.horaires tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===================================================================================================================================
+   7. TOURNOIS & INTERCLUBS
+=================================================================================================================================== */
 
 .events-section {
     max-width: 1000px;
@@ -818,12 +1239,10 @@ footer p:hover {
     background-color: white;
 }
 
-/* Cache la checkbox */
 .event-toggle {
     display: none;
 }
 
-/* En-tête de l'événement (partie cliquable) */
 .event-header {
     display: flex;
     justify-content: space-between;
@@ -840,7 +1259,6 @@ footer p:hover {
     border-color: #1e3c72;
 }
 
-/* Informations principales */
 .event-info {
     display: flex;
     gap: 1rem;
@@ -885,7 +1303,6 @@ footer p:hover {
     flex-shrink: 0;
 }
 
-/* Bouton */
 .event-btn {
     padding: 0.6rem 1.5rem;
     background-color: #1e3c72;
@@ -903,7 +1320,7 @@ footer p:hover {
     transform: translateY(-2px);
 }
 
-/* Contenu détaillé (caché par défaut) */
+/* Contenu détaillé */
 .event-content {
     max-height: 0;
     overflow: hidden;
@@ -912,14 +1329,12 @@ footer p:hover {
     padding: 0 1.5rem;
 }
 
-/* Afficher le contenu quand la checkbox est cochée */
 .event-toggle:checked + .event-header + .event-content {
     max-height: 1000px;
     padding: 1.5rem;
     border-top: 2px solid #e0e0e0;
 }
 
-/* Changer l'apparence du header quand ouvert */
 .event-toggle:checked + .event-header {
     background-color: #1e3c72;
     color: white;
@@ -937,7 +1352,6 @@ footer p:hover {
     color: #1e3c72;
 }
 
-/* Contenu des détails */
 .event-content h4 {
     color: #1e3c72;
     font-size: 1.4rem;
@@ -954,8 +1368,281 @@ footer p:hover {
     color: #1e3c72;
 }
 
-/* Responsive */
+/* ===================================================================================================================================
+   8. RÉSERVATION
+=================================================================================================================================== */
+
+.reservation-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.reservation-section h2 {
+    color: #1e3c72;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reservation-section > p {
+    color: #1e3c72;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Formulaire */
+.reservation-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid transparent;
+    background-image: 
+        linear-gradient(white, white),
+        linear-gradient(135deg, #faae20 0%, #f89d1c 50%, #faae20 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+}
+
+fieldset legend {
+    color: #1e3c72;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Éléments de formulaire */
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #faae20e3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: #1e3c72;
+}
+
+input:valid {
+    border-color: #28a745;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #faae20 0%, #f89d1c 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(250, 174, 32, 0.4);
+}
+
+/* ===================================================================================================================================
+   9. MEDIA QUERIES RESPONSIVE
+=================================================================================================================================== */
+
+/* Tablettes et écrans moyens (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Header */
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .logo a {
+        gap: 0.7rem;
+    }
+
+    nav ul {
+        gap: 0.6rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    /* Index - Images terrains */
+    .imgTerrains {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .imgTerrains img {
+        height: 20vw;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .feature-item{
+        display: none
+    }
+
+}
+
+/* Mobiles et petits écrans (max 768px) */
 @media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo a {
+        justify-content: center;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    /* Main et Footer */
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Index - Images terrains */
+    .imgTerrains {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .imgTerrains img {
+        height: 45vw;
+    }
+
+    .imgTerrains img:nth-child(3),
+    .imgTerrains img:nth-child(4),
+    .imgTerrains img:nth-child(5),
+    .imgTerrains img:nth-child(6) {
+        display: none;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    /* Index - Textes et boutons */
+    .scroll-container p {
+        font-size: 12px;
+    }
+
+    .scroll-container h2 {
+        font-size: 30px;
+    }
+
+    .scroll-section.section-5 p {
+        font-size: 12px;
+    }
+
+    .scroll-section.section-5 h2 {
+        font-size: 20px;
+    }
+
+    .scroll-section.section-5 button {
+        height: 10vw;
+        font-size: 14px;
+    }
+
+    .page-index main{
+        padding :0;
+    }
+
+    /* Contact */
+    .contact-items-row {
+        flex-direction: column;
+    }
+
+    /* Tournois & Interclubs */
     .event-header {
         flex-direction: column;
         gap: 1rem;
@@ -993,123 +1680,4 @@ footer p:hover {
     .category-description {
         font-size: 1rem;
     }
-}
-
-
-
-/* =================================================================================================================
-        Reservation         Reservation             Reservation             Reservation             Reservation 
-===================================================================================================================*/
-
-/* Section de réservation */
-.reservation-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Titre et texte au-dessus du formulaire */
-.reservation-section h2 {
-    color: #1e3c72;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.reservation-section > p {
-    color: #1e3c72;
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-/* Formulaire - fond blanc pour le contraste */
-.reservation-form {
-    max-width: 700px;        
-    margin: 0 auto;        
-    padding: 2rem;           
-    background-color: white; /* Changé de #f9f9f9 à blanc */
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Ajout d'une ombre */
-
-    /* Bordure dégradée */
-    border: 3px solid transparent;
-    background-image: 
-        linear-gradient(white, white),
-        linear-gradient(135deg, #faae20 0%, #f89d1c 50%, #faae20 100%);
-    background-origin: padding-box, border-box;
-    background-clip: padding-box, border-box;
-}
-
-/* Légendes des fieldsets */
-fieldset legend {
-    color: #1e3c72;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* Bouton de soumission */
-button[type="submit"] {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(135deg, #faae20 0%, #f89d1c 100%);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-
-button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(250, 174, 32, 0.4);
-}
-
-/* Reste de votre CSS existant... */
-label {       
-    margin-bottom: 0.5rem;
-    font-weight: bold;      
-    color: #333;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="number"],
-textarea,
-select {
-    width: 100%;        
-    padding: 0.75rem;          
-    border: 2px solid #ddd; 
-    border-radius: 4px;         
-    font-size: 1rem;            
-    font-family: inherit;       
-    transition: border-color 0.3s; 
-    box-sizing: border-box;   
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: #faae20e3;     
-    box-shadow: 0 0 0 3px rgba(0,123,255,0.1); 
-}
-
-input:hover,
-textarea:hover,
-select:hover {
-    border-color: #1e3c72;
-}
-
-input:valid {
-    border-color: #28a745;
-}
-
-input:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: #dc3545;
 }
