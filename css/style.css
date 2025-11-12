@@ -279,7 +279,7 @@ footer p:hover {
 }
 
 .scroll-section.section-3 p {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     width: 90%;
     text-align: center;
     margin: 0;
@@ -435,7 +435,6 @@ footer p:hover {
 =================================================================================================================================== */
 
 .buvette-container {
-    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -1554,6 +1553,10 @@ button[type="submit"]:hover {
 
     .imgTerrains img {
         height: 16vw;
+    }
+
+    .scroll-section.section-2 p{
+        font-size: 1.5vw;
     }
 
     .hero-image {
