@@ -263,7 +263,28 @@ footer p:hover {
 }
 
 .scroll-section.section-3 h3 {
-    font-size: 30px;
+    font-size: 3vw;
+    width: 95%;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap; /* le texte reste sur une seule ligne */
+}
+
+.scroll-section.section-3 h2 {
+    font-size: 4vw;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap; /* le texte reste sur une seule ligne */
+}
+
+.scroll-section.section-3 p {
+    font-size: 2.5vw;
+    width: 90%;
+    text-align: center;
+    margin: 0;
+    background: #05294f;
+    padding: 1rem;
 }
 
 .scroll-section.section-5 h2 {
@@ -462,10 +483,12 @@ footer p:hover {
 
 .buvette-description {
     background: rgba(255, 255, 255, 0.15);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 10px;
-    margin: 2rem 0;
     line-height: 1.8;
+    margin: 3rem auto; /* auto pour centrer */
+    width: 100%; /* même calcul */
+    box-sizing: border-box; /* inclure padding */
 }
 
 .buvette-horaires {
@@ -478,6 +501,14 @@ footer p:hover {
 .buvette-horaires p {
     margin: 0;
     font-size: 1.1rem;
+}
+
+.Petit-Ecran{
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
 }
 
 /* ===================================================================================================================================
@@ -524,7 +555,7 @@ footer p:hover {
     text-align: center;
     font-size: 1.1rem;
     color: #555;
-    max-width: 900px;
+    max-width: 90%;
     margin: 0 auto 2rem;
     line-height: 1.8;
 }
@@ -923,7 +954,7 @@ footer p:hover {
     }
 
     .feature-icon {
-        font-size: 2rem;
+        display :none;
     }
 
     .feature-item {
@@ -933,6 +964,7 @@ footer p:hover {
     .buvette-description {
         font-size: 0.95rem;
         padding: 1rem;
+        margin: 1rem auto;
     }
 
     .cours-section {
@@ -1521,15 +1553,23 @@ button[type="submit"]:hover {
     }
 
     .imgTerrains img {
-        height: 20vw;
+        height: 16vw;
     }
 
     .hero-image {
         display: none;
     }
 
-    .feature-item{
+    .buvette-features{
         display: none
+    }
+
+    .Petit-Ecran{
+        display: flex;
+    }
+
+    .scroll- p{
+        font-size: 14px;
     }
 
 }
@@ -1597,7 +1637,7 @@ button[type="submit"]:hover {
     }
 
     .imgTerrains img {
-        height: 45vw;
+        height: 35vw;
     }
 
     .imgTerrains img:nth-child(3),
@@ -1618,6 +1658,15 @@ button[type="submit"]:hover {
 
     .scroll-container h2 {
         font-size: 30px;
+    }
+
+    .buvette-features{
+        display: none;
+    }
+
+    .Petit-Ecran{
+        display: flex;
+        margin: 0.5rem;
     }
 
     .scroll-section.section-5 p {
@@ -1679,5 +1728,9 @@ button[type="submit"]:hover {
 
     .category-description {
         font-size: 1rem;
+    }
+
+    .scroll-nav{
+        display: none;
     }
 }
