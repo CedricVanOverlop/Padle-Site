@@ -220,6 +220,9 @@ footer p:hover {
     outline: none;
     box-sizing: border-box;
     min-height: 100vh;
+    max-height: 100vh;        
+    overflow-x: hidden; 
+    overflow-y: auto          
 }
 
 /* Couleurs des sections */
