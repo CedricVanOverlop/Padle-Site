@@ -1832,3 +1832,15 @@ button[type="submit"]:hover {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 400px){
+    .scroll-section {
+        justify-content: flex-start;   
+    }
+}
+
+@media (max-height: 620px){
+    .scroll-section {
+        justify-content: flex-start;   
+    }
+}
