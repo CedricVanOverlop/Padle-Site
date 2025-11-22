@@ -5,10 +5,11 @@
     3. FOOTER
     4. MAIN (Pages par défaut)
     5. INDEX (Page d'accueil avec scroll)
-    6. CONTACT
-    7. TOURNOIS & INTERCLUBS
-    8. RÉSERVATION
-    9. MEDIA QUERIES RESPONSIVE
+    6. PAGE COURS
+    7. CONTACT
+    8. TOURNOIS & INTERCLUBS
+    9. RÉSERVATION
+    10. MEDIA QUERIES RESPONSIVE (TOUS REGROUPÉS ICI)
 =================================================================================================================================== */
 
 /* ===================================================================================================================================
@@ -425,15 +426,7 @@ footer p:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ===================================================================================================================================
-   CSS ADDITIONNEL POUR SECTION 4 BUVETTE ET PAGE COURS
-   À ajouter à la fin de votre style.css existant
-=================================================================================================================================== */
-
-/* ===================================================================================================================================
-   SECTION 4 - BUVETTE (INDEX)
-=================================================================================================================================== */
-
+/* Section 4 - Buvette */
 .buvette-container {
     margin: 0 auto;
     padding: 2rem;
@@ -510,8 +503,168 @@ footer p:hover {
     margin: 1.5rem 0;
 }
 
+/* Lien buvette */
+.Buv {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.Buv:hover {
+    color: rgb(38, 27, 204);
+}
+
+/* Popup Menu */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-overlay:target {
+    display: flex;
+}
+
+.popup-content {
+    background-color: rgb(255, 225, 180);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
+}
+
+.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: red;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.close-popup:hover {
+    color: darkred;
+}
+
+.popup-content h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.popup-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.popup-content li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Bouton ouvrir menu */
+.btn-ouvrir {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-ouvrir:hover {
+    background: #0056b3;
+}
+
+/* Boutons généraux sections */
+.scroll-section button {
+    width: 200px;
+    height: 50px;
+    font-size: 1.1rem;
+    background: #faae20;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.scroll-section button:hover {
+    background: #f89d1c;
+    transform: translateY(-2px);
+}
+
+/* Section 5 - Réservation et Contact */
+.section-5 {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section-5 h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 60px;
+}
+
+.section-5 h2:first-of-type {
+    margin-top: 0;
+}
+
+.section-5 p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.section-5 button {
+    background: #FFA500;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px 0 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.section-5 button:hover {
+    background: #FF8C00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* ===================================================================================================================================
-   PAGE COURS
+   6. PAGE COURS
 =================================================================================================================================== */
 
 /* Intro */
@@ -916,260 +1069,34 @@ footer p:hover {
     transform: translateY(-2px);
 }
 
-/* ===================================================================================================================================
-   RESPONSIVE - BUVETTE & COURS
-=================================================================================================================================== */
-
-@media (max-width: 1024px) {
-    .buvette-features {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .coachs-grid,
-    .cours-types-grid,
-    .stages-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .cours-details {
-        grid-template-columns: 1fr;
-    }
+.cours-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
-@media (max-width: 768px) {
-    .cours-intro h1 {
-        font-size: 1.8rem;
-    }
-
-    .intro-text {
-        font-size: 1rem;
-    }
-
-    .buvette-features {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .feature-icon {
-        display :none;
-    }
-
-    .feature-item {
-        padding: 1rem;
-    }
-
-    .buvette-description {
-        font-size: 0.95rem;
-        padding: 1rem;
-        margin: 1rem auto;
-    }
-
-    .cours-section {
-        padding: 1rem;
-    }
-
-    .cours-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .cours-description {
-        font-size: 1rem;
-    }
-
-    .coachs-grid,
-    .cours-types-grid,
-    .stages-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cours-details {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .planning-table {
-        font-size: 0.85rem;
-    }
-
-    .planning-table th,
-    .planning-table td {
-        padding: 0.5rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-    }
-}
-
-/* Lien buvette */
-.Buv {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.Buv:hover {
-    color: rgb(38, 27, 204);
-}
-
-/* Section 4 - Popup Menu */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-overlay:target {
-    display: flex;
-}
-
-.popup-content {
-    background-color: rgb(255, 225, 180);
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    color: rgb(0, 0, 0);
-}
-
-.close-popup {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: red;
-    font-size: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.close-popup:hover {
-    color: darkred;
-}
-
-.popup-content h3 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.popup-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-}
-
-.popup-content li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-}
-
-.popup-content h4 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-/* Boutons généraux sections */
-.scroll-section button {
-    width: 200px;
-    height: 50px;
-    font-size: 1.1rem;
-    background: #faae20;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-    margin-top: 1rem;
-}
-
-.scroll-section button:hover {
-    background: #f89d1c;
-    transform: translateY(-2px);
-}
-
-/* Bouton ouvrir menu */
-.btn-ouvrir {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-ouvrir:hover {
-    background: #0056b3;
-}
-
-/* Section 5 - Réservation et Contact */
-.section-5 {
-    padding: 80px 40px;
-    text-align: center;
-}
-
-.section-5 h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    margin-top: 60px;
-}
-
-.section-5 h2:first-of-type {
-    margin-top: 0;
-}
-
-.section-5 p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto 30px;
-}
-
-.section-5 button {
-    background: #FFA500;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
+.detail-item {
+    background: white;
+    padding: 1.5rem;
     border-radius: 8px;
-    cursor: pointer;
-    margin: 20px 0 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.section-5 button:hover {
-    background: #FF8C00;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.detail-item strong {
+    display: block;
+    color: #1e3c72;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.detail-item p {
+    margin: 0;
+    color: #666;
 }
 
 /* ===================================================================================================================================
-   6. CONTACT
+   7. CONTACT
 =================================================================================================================================== */
 
 .contact-info h2 {
@@ -1227,7 +1154,7 @@ footer p:hover {
 }
 
 /* ===================================================================================================================================
-   7. TOURNOIS & INTERCLUBS
+   8. TOURNOIS & INTERCLUBS
 =================================================================================================================================== */
 
 .events-section {
@@ -1400,7 +1327,7 @@ footer p:hover {
 }
 
 /* ===================================================================================================================================
-   8. RÉSERVATION
+   9. RÉSERVATION
 =================================================================================================================================== */
 
 .reservation-section {
@@ -1440,14 +1367,34 @@ footer p:hover {
     background-clip: padding-box, border-box;
 }
 
+fieldset {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
 fieldset legend {
     color: #1e3c72;
     font-weight: bold;
     font-size: 1.1rem;
+    padding: 0 0.5rem;
 }
 
 /* Éléments de formulaire */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 label {
+    display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
     color: #333;
@@ -1493,7 +1440,56 @@ input:invalid:not(:focus):not(:placeholder-shown) {
     border-color: #dc3545;
 }
 
+/* Radio buttons */
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radio-item input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.radio-item label {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Terrains grid */
+.terrains-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.terrain-choice {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.terrain-choice input[type="radio"] {
+    width: auto;
+}
+
+.terrain-choice label {
+    margin: 0;
+    font-weight: normal;
+}
+
 /* Bouton de soumission */
+.form-submit {
+    margin-top: 2rem;
+}
+
 button[type="submit"] {
     width: 100%;
     padding: 1rem;
@@ -1513,7 +1509,7 @@ button[type="submit"]:hover {
 }
 
 /* ===================================================================================================================================
-   9. MEDIA QUERIES RESPONSIVE
+   10. MEDIA QUERIES RESPONSIVE (TOUS REGROUPÉS ICI)
 =================================================================================================================================== */
 
 /* Tablettes et écrans moyens (769px - 1024px) */
@@ -1575,6 +1571,25 @@ button[type="submit"]:hover {
         font-size: 14px;
     }
 
+    /* Cours */
+    .coachs-grid,
+    .cours-types-grid,
+    .stages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cours-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cours responsive - max-width: 1024px */
+@media (max-width: 1024px) {
+    .buvette-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 
 /* Mobiles et petits écrans (max 768px) */
@@ -1689,6 +1704,10 @@ button[type="submit"]:hover {
         padding :0;
     }
 
+    .scroll-section.section-3 p {
+    font-size: 2.5vw;
+    }
+
     /* Contact */
     .contact-items-row {
         flex-direction: column;
@@ -1735,5 +1754,78 @@ button[type="submit"]:hover {
 
     .scroll-nav{
         display: none;
+    }
+
+    /* Cours */
+    .cours-intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .feature-icon {
+        display :none;
+    }
+
+    .feature-item {
+        padding: 1rem;
+    }
+
+    .buvette-description {
+        font-size: 0.95rem;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .cours-section {
+        padding: 1rem;
+    }
+
+    .cours-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .cours-description {
+        font-size: 1rem;
+    }
+
+    .coachs-grid,
+    .cours-types-grid,
+    .stages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cours-details {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .planning-table {
+        font-size: 0.85rem;
+    }
+
+    .planning-table th,
+    .planning-table td {
+        padding: 0.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    /* Réservation */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .terrains-grid {
+        grid-template-columns: 1fr;
     }
 }
