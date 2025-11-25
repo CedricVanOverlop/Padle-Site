@@ -41,6 +41,7 @@ Le site est optimisé pour :
 - **Mobiles** : 768px - 450px
   
 ⚠️ La page index n'est pas optimisée pour des écrans avec un rapport longueur / largeur > 1.8 ou pour les écrans <450px
+
 🎯 Cependant cela ne procure aucun bug et cela été gèré au mieux
 
 ⚠️ Il y a aussi des problèmes sur téléphone avec la nav sur les autres pages mais ceci est compliqué d'être géré sans script
@@ -57,10 +58,7 @@ Le fichier `style.css` est organisé en 10 sections :
 7. Contact
 8. Tournois & Interclubs
 9. Réservation
-10. Media Queries (tous regroupés)
-
-
-## 🚀 Utilisation
+10. Media Queries
 
 Ouvrir `index.html` dans un navigateur web.
 
