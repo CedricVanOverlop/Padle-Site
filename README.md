@@ -39,6 +39,7 @@ Le site est optimisé pour :
 - **Desktop** : > 1024px
 - **Tablettes** : 769px - 1024px
 - **Mobiles** : 768px - 450px
+  
 ⚠️ La page index n'est pas optimisée pour des écrans avec un rapport longueur / largeur > 1.8 ou pour les écrans <450px
 🎯 Cependant cela ne procure aucun bug et cela été gèré au mieux
 
